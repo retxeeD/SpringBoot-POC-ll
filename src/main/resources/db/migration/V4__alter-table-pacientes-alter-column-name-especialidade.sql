@@ -1,0 +1,1 @@
+ALTER TABLE pacientes RENAME COLUMN especialidade TO especialidade_procurada;

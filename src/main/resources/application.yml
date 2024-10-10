@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: study
+#Propriedades para comunicação com banco de dados local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vollmed_api
+    username: root
+    password: root
+#Propriedades para logar e formatar o sql executadono banco
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+#Propriedade para alterar nome defautl do parametro de paginação
+  data:
+    web:
+      pageable:
+        size-parameter: tamanho
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password: password
+#    driver-class-name: org.h2.Driver
+# sql:
+#   init:
+#     platform: mysql
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+server:
+  error:
+    include-stacktrace: never
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:12345678}
